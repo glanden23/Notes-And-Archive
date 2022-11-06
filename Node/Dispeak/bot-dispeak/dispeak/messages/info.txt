@@ -1,0 +1,22 @@
+Welcome to Dispeak. To get started, simply create a room in <#899077996579799083>!
+
+__Room Owner Commands:__
+```
+* !settings - View room settings.
+* !invite (user#0001) - Invite a user to your room.
+* !remove (user#0001) - Remove a user from your room.
+* !ban (user#0001) - Ban a user from accessing your room.
+* !pardon (user#0001) - Remove ban from a user.
+* !visibility - Toggle if your room is public or not.
+* !nsfw - Set your room to NSFW.
+* !purge (count) - Purge messages from your channel.
+* !slowmode (seconds) - Change the time required between chat messages.
+* !topic (topic) - Show users what your room is all about.
+* !bitrate (8 - 96) - Change your VC's bitrate. (64 kbps is default)
+* !rename (name) - Set your rooms name.
+* !delete - Delete your room.
+* !permissions - View room permissions.
+* !setpermission (group) (permission) (y/n) - Change permission.
+```
+
+If you ever need assistance, have a suggestion, or just want to provide some sort of feedback, please DM <@901547634983075942>. This will be redirected to a staff member.

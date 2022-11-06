@@ -1,0 +1,91 @@
+Changelog v2.1 (10/26/21):
+    * Bot will automatically set its status again after 10 minutes to fix discord issue with reconnecting.
+    * This is compatitable with devMode.
+
+Changelog v2.0 (10/24/21):
+    * Added visibility command to change room from private to public or public to private.
+    * Added permissions command to have an overview of what the current room permissions are.
+    * Added new icons to settings/permissions command.
+    * Changed setTitle to author along with displaying user's avatar.
+    * Added ability to see NSFW and slow mode current setting in settings command.
+    * Settings now has a footer that redirects to permissions and permissions now redirects to setpermission.
+    * Added permission grouping. This allows for permissions to be extended upon in the future.
+    * Added setpermission command.
+    * Added purge command to mass delete messages in a text channel.
+    * Commands will now await changes from discord before comfirming them as done. This may add a delay but if something goes wrong, the bot won't say it was completed.
+    * Added ability to change admin permissions.
+    * Overview of admin permissions will now appear in permissions.
+    * Added ability to add admins.
+    * Added new admin permission checks.
+    * Fixed visibility command not changing vc visibility.
+    * Visibility will now await before announcing it is finished.
+    * Removed extra cg check from invite & remove, not needed.
+    * Changed how remove and invite get user tag out of command to work with case.
+    * Added ban and pardon commands for public rooms along with admin checks.
+    * Added checks to remove, invite, ban, and pardon to make sure they aren't admins or room owners.
+    * Changed info to reflect new changes.
+    * Info now tells you to DM the correct bot.
+    * Fixed issue with add reactions admin returning from permission in permissions command.
+    * Admin permissions will now automatically update when a new one is added and when permissions for that group are changed.
+
+Changelog v1.2 (10/24/21):
+    * Running commands in another room will no longer function. Should prevent any weird errors from happening.
+
+Changelog v1.1 (10/23/21):
+    * Fixed changelog.
+    * Added new commands to info embed.
+    * Disabled developer mode.
+    * Set version to reflect correctly.
+
+Changelog v1.0 (10/23/21):
+    * Added rename command.
+    * New settings command to view current channel settings.
+    * Added bitrate command to change the bitrate of room VC.
+    * Channel type added to settings which in the future will say if the channel is public. (only private for now)
+    * Catagory names will now update when user changes their username.
+    * Removed seperate update commands for each embed and put into one command. "!updatemessages"
+    * Removed major change ping command.
+    * Update & downtime pings will now be automatically deleted after 5 seconds. (helps prevent confusion)
+    * To keep channels free of bot commands, they will be automatically deleted after a certain amount of time.
+    * All ran commands are now logged as debug.
+    * New developer checks for dev mode.
+    * Bot now checks to make sure reaction remove isn't bot.
+    * Added slowmode command.
+    * Added NSFW command.
+    * Users who hit 429 rate limit will no longer be able to interact for the bot. (besides developer commands)
+    * Fixed issue with cooldown check erroring out due to wrong variable being called.
+    * Dev lock being disabled means the bot will no longer interact with the developer.
+    * Added support bot which will handle staff tickets.
+    * Support bot will create a channel for any users that DMs it if they don't have one.
+    * Messages sent in these channels will now be redirected to the user.
+    * Added logs to these channels so they can be referenced later.
+    * Added close command so tickets can be closed.
+
+Changelog v0.5 (10/23/21):
+    * Fixed emote for "Major Room Changes for Owners/Admins" still being added.
+
+Changelog v0.4 (10/17/21):
+    * Removed "Major Room Changes for Owners/Admins" as it falls under Bot Updates pretty heavily.
+    * Removed reaction watch for "Major Room Changes for Owners/Admins"
+    * Changed create rooms embed to take up a bit more space and fit in better.
+
+Changelog v0.3 (10/17/21):
+    * Forgot to remove self role assignment line of code, oops.
+    * Added sleep function.
+    * Bot should no longer get rate-limited when adding reactions.
+
+Changelog v0.2 (10/17/21):
+    * Fixed sqlite syncing to github.
+    * Added notify command to send ping to all users who have signed up for that role.
+    * New string dependency for advanced string manipulation.
+    * Added !invite & !remove command.
+
+Changelog v0.1 (10/17/21):
+    * Created Dispeak guild using bot & setup permissions.
+    * Created Dispeak Staff guild using bot & setup basic permissions.
+    * Added basic embeds.
+    * Embed body contents are no longer hardcoded, can be changed in a txt file and updated using the !updateinfo, !updaterules, !updatenotify commands.
+    * Added star command. When ran, will provide the developer with administration controls over both Discords. Should be used with care to avoid users thinking we are stalking them.
+    * Create rooms embed is now functional and will create a catagory, text, and voice chat channel named after the owner's username.
+    * Rooms are now deletable with the !delete command.
+    * Added notification functionality. Reactions when added will add the role and when removed will remove the role. Will also prompt with a message notification letting the user know it was completed.

@@ -1,0 +1,2 @@
+:blue_circle: - Bot Updates
+:yellow_circle: - Unexpected/Scheduled Downtime

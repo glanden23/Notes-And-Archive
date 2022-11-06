@@ -1,0 +1,29 @@
+Version 0.13 (4/6/21):
+* Removed sneaky debug log in code.
+* Added notify roles.
+* Add staff notifications when bump cooldown is over.
+
+Version 0.12 (4/5/21):
+* Added command visibility check.
+* Fixed IndexOf error and removed temp fix.
+
+Version 0.11 (4/2/21):
+* Fixed issue causing bot to respond to every invalid command.
+
+Version 0.10 (4/1/21):
+* New error embeds.
+* Fixed some issues of other embeds.
+* Added console channel check for all commands.
+* Added usage stats above room creation.
+* Basic implementation of a room max check. (max of 120 rooms can be created)
+* Added ability for room admins to pardon, ban, remove, and invite users.
+
+Version 0.02 (3/29/21):
+* Corrected new react channel message id.
+
+Version v0.01 (3/29/21):
+* Reinstalled packages with --save.
+* Fixed issue with staff commands not being able to be ran in discord staff.
+* Staff commands now instantly delete themselves after being ran and output is instead DM'd to the person who ran it.
+* Version references.
+* Add changelog channel.
