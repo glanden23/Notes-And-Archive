@@ -1,0 +1,133 @@
+#
+# Asks user what they want.
+#
+
+hasFries, hasSandwich, hasBeverage = False,False,False
+selections = []
+total = 0
+# Source: https://www.geeksforgeeks.org/python-string-join-method/
+s = "\n"
+# ----
+
+#
+# Checks input to make sure it is one of the options (Iteration #1)
+#
+def sandwichf():
+    global selections, total, s
+    print("What type of sandwich do you want?\nChicken($5.25)\nBeef($6.25)\nTofu($5.75)")
+    UI = input("(c, b, t) >>> ")
+    if (UI.lower() == "c" or UI.lower() == "b" or UI.lower() == "t"):
+        if (UI.lower() == "c"):
+            total += 5.25
+            selections.append("Chicken ($5.25)")
+        elif (UI.lower() == "b"):
+            total += 6.25
+            selections.append("Beef ($6.25)")
+        else:
+            total += 5.75
+            selections.append("Tofu ($5.75)")
+        print(f"---------\nOrder Currently:\n---------\n{s.join(selections)}\n---------\nSubtotal: ${round(total, 2)}\n---------")
+    else:
+        print("That's not a valid sandwich type!")
+        sandwichf()
+
+print("Would you like a sandwich?")
+UI = input("(y, n) >>> ")
+if UI.lower() == "y":
+    hasSandwich = True
+    sandwichf()
+else:
+    print("Okay! No problem, let's move on then.")
+
+#
+# Checks if the user would like a beverage (Iteration #2)
+#
+
+def beveragef():
+    global selections, total, s
+    print("What size of drink would you like?\nSmall Drink ($1.00)\nMedium Drink ($1.75)\nLarge Drink ($2.25)")
+    UI = input("(s, m, l) >>> ")
+    if UI.lower() == "s" or UI.lower() == "m" or UI.lower() == "l":
+        if UI.lower() == "s":
+            total += 1.00
+            selections.append("Small Drink ($1.00)")
+        elif UI.lower() == "m":
+            total += 1.75
+            selections.append("Medium Drink ($1.75)")
+        else:
+            total += 2.25
+            print("Would you like a child size for $0.38 more?")
+            UI = input("(y, n) >>> ")
+            if UI.lower() == "y":
+                total += 0.38
+                selections.append("Child Drink ($2.63)")
+            else:
+                selections.append("Large Drink ($2.25)")
+            print(f"---------\nOrder Currently:\n---------\n{s.join(selections)}\n---------\nSubtotal: ${round(total, 2)}\n---------")
+    else:
+        print("That's not a valid drink!")
+        beveragef()
+
+print("Would you like a beverage?")
+UI = input("(y, n) >>> ")
+if UI.lower() == "y":
+    hasBeverage = True
+    beveragef()
+else:
+    print("Okay! No problem, let's move on then.")
+
+#
+# Checks if the user is interested in fries. (Iteration #3)
+#
+
+def friesf():
+    global selections, total, s
+    print("What size of fry would you like?\nSmall Fry ($1.00)\nMedium Fry ($1.50)\nLarge Fry ($2.00)")
+    UI = input("(s, m, l) >>> ")
+    if UI.lower() == "s" or UI.lower() == "m" or UI.lower() == "l":
+        if UI.lower() == "s":
+            total += 1.00
+            print("Would you like to mega-size your fries?")
+            UI = input("(y, n) >>> ")
+            if UI.lower() == "y":
+                total += 1.00
+                selections.append("Mega-Sized Fries ($2.00)")
+            else:
+                selections.append("Small Fries ($1.00)")
+        elif UI.lower() == "m":
+            total += 1.50
+            selections.append("Medium Fries ($1.50)")
+        else:
+            total += 2.00
+            selections.append("Large Fries ($2.00)")
+        print(f"---------\nOrder Currently:\n---------\n{s.join(selections)}\n---------\nSubtotal: ${round(total, 2)}\n---------")
+    else:
+        print("You entered an invalid fry size!")
+        friesf()
+
+
+print("Would you like some fries?")
+UI = input("(y, n) >>> ")
+if UI.lower() == "y":
+    hasFries = True
+    friesf()
+else:
+    print("Alright, that's fine, let's move on then.")
+
+def ketchupf():
+    global selections, total, s
+    print("How many ketchup packets would you like? ($0.25/each)")
+    UI = int(input("(#) >>> "))
+    if UI > 0:
+        total += UI * .25
+        selections.append(f"Ketchup (${UI * .25})")
+        print(f"---------\nOrder Currently:\n---------\n{s.join(selections)}\n---------\nSubtotal: ${round(total, 2)}\n---------")
+ketchupf()
+
+#IF user has ordered all 3 items on the menu, give $1 off.
+if hasFries and hasBeverage and hasSandwich:
+    total -= 1
+    print(f"---------\nOrder Currently:\n---------\n{s.join(selections)}\n---------\nSubtotal: ${round(total + 1, 2)} -> ${round(total, 2)}\nTotal: ${round(total + (total * 0.07), 2)}\n---------")
+    print("You got a dollar off for ordering everything! Thank you!:]")
+else:
+    print(f"---------\nOrder Currently:\n---------\n{s.join(selections)}\n---------\nSubtotal: ${round(total, 2)}\nTotal: ${round(total + (total * 0.07), 2)}\n---------")
